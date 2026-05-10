@@ -47,4 +47,4 @@ jobs:
           cache-from: type=gha # See: https://docs.docker.com/build/cache/backends/gha/
           cache-to: type=gha,mode=max
           push: true
-          tags: emfcamp/phones-rtpengine:latest
+          tags: ghcr.io/emfcamp/phones-rtpengine:latest
