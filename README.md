@@ -43,9 +43,8 @@ command:
 
 ## Updating rtpengine
 
-Update the two `ARG` values at the top of the `Dockerfile` to match the desired release from the [rtpengine releases page](https://github.com/sipwise/rtpengine/releases):
+Update the `ARG` value at the top of the `Dockerfile` to match the desired release from the [rtpengine releases page](https://github.com/sipwise/rtpengine/releases):
 
 ```dockerfile
 ARG RTPENGINE_TAG=mr13.5.1.10
-ARG RTPENGINE_VERSION=13.5.1.10+0.mr13.5.1.10+gh+trixie
 ```
