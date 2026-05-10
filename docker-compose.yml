@@ -1,0 +1,15 @@
+services:
+
+  rtpengine:
+    image: phones-rtpengine
+    container_name: rtpengine
+    network_mode: host
+    command:
+      - --listen-ng=0.0.0.0:5000
+      - --foreground
+      - --log-stderr
+      - --log-level=6
+      - --table=-1
+      - --listen-cli=0.0.0.0:6000
+      - --listen-http=0.0.0.0:7000
+    restart: unless-stopped
