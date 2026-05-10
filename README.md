@@ -1,6 +1,6 @@
 # phones-rtpengine
 
-Docker image for [rtpengine](https://github.com/sipwise/rtpengine), the Sipwise RTP proxy. Runs on Debian Trixie using the official pre-built packages.
+Docker image for [rtpengine](https://github.com/sipwise/rtpengine), the Sipwise RTP proxy. Built using-non free ffmpeg packages from [deb-multimedia.org/](https://deb-multimedia.org/)
 
 ## TODO
 
