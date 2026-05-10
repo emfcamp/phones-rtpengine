@@ -1,6 +1,6 @@
 # phones-rtpengine
 
-Docker image for [rtpengine](https://github.com/sipwise/rtpengine), the Sipwise RTP proxy. Built using-non free ffmpeg packages from [deb-multimedia.org](https://deb-multimedia.org/)
+Docker image for [rtpengine](https://github.com/sipwise/rtpengine), the Sipwise RTP proxy. Built using non-free ffmpeg packages from [deb-multimedia.org](https://deb-multimedia.org/)
 
 ## TODO
 
