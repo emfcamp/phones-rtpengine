@@ -7,14 +7,13 @@ on:
       - feature/ci
   workflow_dispatch:
 
-permissions: {}
+permissions:
+  attestations: write
+  contents: read
+  packages: write
 
 jobs:
   build:
-    permissions:
-      attestations: write
-      contents: read
-      packages: write
     name: "Docker Build"
     runs-on: ubuntu-latest
     timeout-minutes: 15
