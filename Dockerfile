@@ -2,7 +2,16 @@ FROM debian:trixie-slim AS builder
 
 ARG RTPENGINE_TAG=mr26.2.1.1
 
+# Set up deb-multimedia for AMR-capable ffmpeg build deps
 RUN apt-get update \
+    && apt-get install -y --no-install-recommends ca-certificates \
+    && echo "deb [trusted=yes] https://www.deb-multimedia.org trixie main non-free" \
+        > /etc/apt/sources.list.d/deb-multimedia.list \
+    && apt-get update \
+    && apt-get install -y --no-install-recommends deb-multimedia-keyring \
+    && echo "deb https://www.deb-multimedia.org trixie main non-free" \
+        > /etc/apt/sources.list.d/deb-multimedia.list \
+    && apt-get update \
     && DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends \
         build-essential \
         ca-certificates \
@@ -43,7 +52,16 @@ RUN make -j$(nproc) rtpengine \
 
 FROM debian:trixie-slim
 
+# Set up deb-multimedia for AMR-capable ffmpeg runtime libs
 RUN apt-get update \
+    && apt-get install -y --no-install-recommends ca-certificates \
+    && echo "deb [trusted=yes] https://www.deb-multimedia.org trixie main non-free" \
+        > /etc/apt/sources.list.d/deb-multimedia.list \
+    && apt-get update \
+    && apt-get install -y --no-install-recommends deb-multimedia-keyring \
+    && echo "deb https://www.deb-multimedia.org trixie main non-free" \
+        > /etc/apt/sources.list.d/deb-multimedia.list \
+    && apt-get update \
     && DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends \
         curl \
         iptables \

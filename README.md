@@ -1,11 +1,12 @@
 # phones-rtpengine
 
-Docker image for [rtpengine](https://github.com/sipwise/rtpengine), the Sipwise RTP proxy.
+Docker image for [rtpengine](https://github.com/sipwise/rtpengine), the Sipwise RTP proxy. Built using non-free ffmpeg packages from [deb-multimedia.org](https://deb-multimedia.org/) for AMR codec support.
 
 ## TODO
 
 - [X] Get basic rtpengine container operational
 - [X] Add transcoding support
+- [X] Add support for AMR codecs
 - [ ] Add support for kernel module
 
 ## Configuration
