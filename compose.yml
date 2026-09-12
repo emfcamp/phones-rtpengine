@@ -1,0 +1,16 @@
+services:
+
+  rtpengine:
+    image: ghcr.io/emfcamp/phones-rtpengine:v0.1
+    container_name: rtpengine
+    network_mode: host
+    restart: unless-stopped
+    environment:
+      RTPENGINE_INTERFACE: 127.0.0.1
+      # RTPENGINE_LISTEN_NG: 0.0.0.0:2223
+      # RTPENGINE_LISTEN_CLI: 0.0.0.0:6000
+      # RTPENGINE_LISTEN_HTTP: 0.0.0.0:7000
+      # RTPENGINE_TABLE: -1
+      # RTPENGINE_PORT_MIN: 10000
+      # RTPENGINE_PORT_MAX: 29999
+      # RTPENGINE_LOG_LEVEL: 6
