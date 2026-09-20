@@ -1,3 +1,4 @@
+
 # phones-rtpengine
 
 Docker image for [rtpengine](https://github.com/sipwise/rtpengine), the Sipwise RTP proxy.
@@ -30,6 +31,14 @@ environment:
 
 `--foreground` and `--log-stderr` are always set
 
+### Multiple interfaces
+
+For installations with multiple interfaces,  `RTPENGINE_INTERFACE` accepts semi-colon separate list of names and IPs. Each entry becomes its own `--interface` argument, which can then be referenced with `direction` in `rtpengine_manage`
+
+```yaml
+environment:
+  RTPENGINE_INTERFACE: "external/1.2.3.4;vpn/10.13.0.1"
+```
 
 ## Usage
 
