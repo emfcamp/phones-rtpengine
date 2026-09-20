@@ -8,8 +8,15 @@ if [ "$#" -gt 0 ]; then
 fi
 
 # Otherwise we build it from env vars and sane defaults
+
+# If we're using named interfaces, split the supplied env var
+# into multiple --interface arguments
+for iface in $(echo "${RTPENGINE_INTERFACE:-127.0.0.1}" | tr ';' ' '); do
+    set -- "$@" --interface="$iface"
+done
+
 exec /usr/local/bin/rtpengine \
-    --interface="${RTPENGINE_INTERFACE:-127.0.0.1}" \
+    "$@" \
     --listen-ng="${RTPENGINE_LISTEN_NG:-0.0.0.0:2223}" \
     --listen-cli="${RTPENGINE_LISTEN_CLI:-0.0.0.0:6000}" \
     --listen-http="${RTPENGINE_LISTEN_HTTP:-0.0.0.0:7000}" \
