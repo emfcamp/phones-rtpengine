@@ -20,12 +20,12 @@ environment:
 | Env var                | Default        | rtpengine option |
 | ---------------------- | -------------- | ---------------- |
 | `RTPENGINE_INTERFACE`  | `127.0.0.1`    | `--interface`    |
-| `RTPENGINE_LISTEN_NG`  | `0.0.0.0:2223` | `--listen-ng`    |
-| `RTPENGINE_LISTEN_CLI` | `0.0.0.0:6000` | `--listen-cli`   |
-| `RTPENGINE_LISTEN_HTTP`| `0.0.0.0:7000` | `--listen-http`  |
+| `RTPENGINE_LISTEN_NG`  | `127.0.0.1:2223` | `--listen-ng`    |
+| `RTPENGINE_LISTEN_CLI` | `127.0.0.1:6000` | `--listen-cli`   |
+| `RTPENGINE_LISTEN_HTTP`| `127.0.0.1:7000` | `--listen-http`  |
 | `RTPENGINE_TABLE`      | `-1`           | `--table`        |
 | `RTPENGINE_PORT_MIN`   | `10000`        | `--port-min`     |
-| `RTPENGINE_PORT_MAX`   | `29999`        | `--port-max`     |
+| `RTPENGINE_PORT_MAX`   | `10999`        | `--port-max`     |
 | `RTPENGINE_LOG_LEVEL`  | `6`            | `--log-level`    |
 
 `--foreground` and `--log-stderr` are always set
